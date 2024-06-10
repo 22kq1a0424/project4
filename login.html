@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style>
+   body{
+      background-size: cover;
+   }
+</style>
+<script>
+ // User Validations
+ function loginValidation() {
+             // Ramesh
+   var uname = document.myform.username.value;
+              //Ramesh@123
+   var password = document.myform.password.value;
+             if(uname==null || uname=="") {
+               alert("Name cant be blank")
+               return false;  
+            } else if (password.length<6){
+               alert("Password Must be 6 letters")
+               return false;
+            }  
+            return true                 
+         }               
+</script>
+</head>
+<body background="C:\Users\Naga Lakshmi\Downloads\images (2).jpeg">
+     <form name="myform" action="registration.html"onsubmit="return loginValidation(this)">
+        <table align="center" cellspacing="15px">
+            <tr>
+       <td><b>User Name : <input type="text" name="username"></td></b><br>
+            </tr>
+            <tr>
+       <td><b>Password :  <input type="password" name="password"></td></b> <br>
+            </tr>
+            <tr>
+                <td><b> <input type="submit" value="Submit"></td></b>
+                </tr>
+
+</table>
+</form>
+</body>
+</html>

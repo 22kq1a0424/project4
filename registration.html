@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-size: cover;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var myform = document.myform;
+      var myemail = myform.email.value;
+      var myname = myform.name.value;
+      var mypassword = myform.password.value;
+      var myconfirmpassword = myform.confirmpassword.value;
+
+      // Validate name
+      if (myname.trim() === "") {
+        alert("Please enter your name.");
+        return false;
+      }
+
+      // Validate email
+      var atposition = myemail.indexOf("@");
+      var dotposition = myemail.lastIndexOf(".");
+      if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= myemail.length) {
+        alert("Please enter a valid e-mail address.");
+        return false;
+      }
+
+      // Validate password
+      if (mypassword.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+
+      // Validate confirm password
+      if (mypassword !== myconfirmpassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      // If all validations pass
+      return true;
+    }
+  </script>
+</head>
+<body background="C:\Users\Naga Lakshmi\Downloads\download (2).jpeg">
+  <form name="myform" onsubmit="return validateForm()">
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Confirm Password: <input type="password" name="confirmpassword"><br><br>
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
